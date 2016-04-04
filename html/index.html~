@@ -164,12 +164,13 @@
 		<h3>Facebook events</h3><input type="button" value="See FB events" name="check" onClick="getList();"/>
 		<div id="eventOut">Select Event Info to fetch details</div>
 	</div>
+    </div>
     <div id="menuleftcontent">
         <ul id="menu">
             <li><a href="#firstcontent"><h4>Google connect</h4></a></li>
             <li><a href="#secondcontent"><h4>Facebook connect</h4></a></li>
         </ul>
-    </div></div>
+    </div>
     <div id="clearingdiv"></div>
 </div>
 
@@ -296,7 +297,6 @@ document.getElementById('eventOut').innerHTML=JSON.stringify(response);
     }
 );
 }
-
 </script>
 
 
