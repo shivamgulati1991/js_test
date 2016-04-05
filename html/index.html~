@@ -147,7 +147,7 @@
       <span><h2>Login to see your upcoming events</h2></span>
       <!--Button for the user to click to initiate auth sequence --><br/>
       <button style="display:inline-block" id="authorize-button" onclick="handleAuthClick(event)">
-	<img src="/images/Google.png" style="float:left;margin-right:0.5em"/>Sign in to Google
+	<img src="/images/Google.png" height="42" width="42" style="float:left;margin-right:0.5em"/>Sign in to Google
       </button>
     </div>
     <pre id="output"></pre>
