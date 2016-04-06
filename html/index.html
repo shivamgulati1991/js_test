@@ -90,7 +90,7 @@
           var events = resp.items;
          // appendPre('Upcoming events:');
 	document.getElementById('out').innerHTML='<h3>Upcoming events</h3>';
-	var tableBody=	'<h3>Upcoming events on your Google Calendar</h3><div class="CSSTableGenerator"><table><tr><th>Event</th><th>Start Date and Time</th><th>End Date and Time</th><th>Creator</th></tr>';
+	var tableBody=	'<h3>Upcoming events on your Google Calendar</h3><div class="CSSTableGenerator"><table border=1 cellspacing=2><tr><th>Event</th><th>Start Date and Time</th><th>End Date and Time</th><th>Creator</th></tr>';
           if (events.length > 0) {
             for (i = 0; i < events.length; i++) {
 		console.log("Upcoming event: "+i);
@@ -151,7 +151,7 @@
 
 .CSSTableGenerator {
 	margin:0px;padding:0px;
-	width:100%;
+
 	box-shadow: 10px 10px 5px #888888;
 	border:1px solid #000000;
 	
