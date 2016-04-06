@@ -90,7 +90,7 @@
           var events = resp.items;
          // appendPre('Upcoming events:');
 	document.getElementById('out').innerHTML='<h3>Upcoming events</h3>';
-	var tableBody=	'<h3>Upcoming events on your Google Calendar</h3><table border=1 cellspacing=2><tr><th>Event</th><th>Start Date and Time</th><th>End Date and Time</th><th>Creator</th></tr>';
+	var tableBody=	'<h3>Upcoming events on your Google Calendar</h3><div class="CSSTableGenerator"><table border=1 cellspacing=2><tr><th>Event</th><th>Start Date and Time</th><th>End Date and Time</th><th>Creator</th></tr>';
           if (events.length > 0) {
             for (i = 0; i < events.length; i++) {
 		console.log("Upcoming event: "+i);
@@ -108,7 +108,7 @@
             //appendPre('No upcoming events found.');
 	tableBody+='No upcoming events';
           }
-	tableBody+='</table><br><br>';
+	tableBody+='</table></div><br><br>';
 	document.getElementById('out').innerHTML=tableBody;	
         });
       }
@@ -147,6 +147,102 @@
 }
 #clearingdiv {
     clear: both;
+}
+
+.CSSTableGenerator {
+	margin:0px;padding:0px;
+	width:100%;
+	box-shadow: 10px 10px 5px #888888;
+	border:1px solid #000000;
+	
+	-moz-border-radius-bottomleft:0px;
+	-webkit-border-bottom-left-radius:0px;
+	border-bottom-left-radius:0px;
+	
+	-moz-border-radius-bottomright:0px;
+	-webkit-border-bottom-right-radius:0px;
+	border-bottom-right-radius:0px;
+	
+	-moz-border-radius-topright:0px;
+	-webkit-border-top-right-radius:0px;
+	border-top-right-radius:0px;
+	
+	-moz-border-radius-topleft:0px;
+	-webkit-border-top-left-radius:0px;
+	border-top-left-radius:0px;
+}.CSSTableGenerator table{
+    border-collapse: collapse;
+        border-spacing: 0;
+	width:100%;
+	height:100%;
+	margin:0px;padding:0px;
+}.CSSTableGenerator tr:last-child td:last-child {
+	-moz-border-radius-bottomright:0px;
+	-webkit-border-bottom-right-radius:0px;
+	border-bottom-right-radius:0px;
+}
+.CSSTableGenerator table tr:first-child td:first-child {
+	-moz-border-radius-topleft:0px;
+	-webkit-border-top-left-radius:0px;
+	border-top-left-radius:0px;
+}
+.CSSTableGenerator table tr:first-child td:last-child {
+	-moz-border-radius-topright:0px;
+	-webkit-border-top-right-radius:0px;
+	border-top-right-radius:0px;
+}.CSSTableGenerator tr:last-child td:first-child{
+	-moz-border-radius-bottomleft:0px;
+	-webkit-border-bottom-left-radius:0px;
+	border-bottom-left-radius:0px;
+}.CSSTableGenerator tr:hover td{
+	
+}
+.CSSTableGenerator tr:nth-child(odd){ background-color:#d3c2c2; }
+.CSSTableGenerator tr:nth-child(even)    { background-color:#ffffff; }.CSSTableGenerator td{
+	vertical-align:middle;
+	
+	
+	border:1px solid #000000;
+	border-width:0px 1px 1px 0px;
+	text-align:left;
+	padding:7px;
+	font-size:10px;
+	font-family:Arial;
+	font-weight:bold;
+	color:#000000;
+}.CSSTableGenerator tr:last-child td{
+	border-width:0px 1px 0px 0px;
+}.CSSTableGenerator tr td:last-child{
+	border-width:0px 0px 1px 0px;
+}.CSSTableGenerator tr:last-child td:last-child{
+	border-width:0px 0px 0px 0px;
+}
+.CSSTableGenerator tr:first-child td{
+		background:-o-linear-gradient(bottom, #1c0101 5%, #bf5f00 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #1c0101), color-stop(1, #bf5f00) );
+	background:-moz-linear-gradient( center top, #1c0101 5%, #bf5f00 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#1c0101", endColorstr="#bf5f00");	background: -o-linear-gradient(top,#1c0101,bf5f00);
+
+	background-color:#1c0101;
+	border:0px solid #000000;
+	text-align:center;
+	border-width:0px 0px 1px 1px;
+	font-size:14px;
+	font-family:Arial;
+	font-weight:bold;
+	color:#ffffff;
+}
+.CSSTableGenerator tr:first-child:hover td{
+	background:-o-linear-gradient(bottom, #1c0101 5%, #bf5f00 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #1c0101), color-stop(1, #bf5f00) );
+	background:-moz-linear-gradient( center top, #1c0101 5%, #bf5f00 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#1c0101", endColorstr="#bf5f00");	background: -o-linear-gradient(top,#1c0101,bf5f00);
+
+	background-color:#1c0101;
+}
+.CSSTableGenerator tr:first-child td:first-child{
+	border-width:0px 0px 1px 0px;
+}
+.CSSTableGenerator tr:first-child td:last-child{
+	border-width:0px 0px 1px 1px;
 }
 
 </style>
