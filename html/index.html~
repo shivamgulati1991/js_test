@@ -283,7 +283,7 @@
 function getList(){
 	console.log("See Facebook appointments");
 FB.api(
-    "/161813960852942",
+    "/780001448800563",
     function (response) {
       if (response && !response.error) {
 document.getElementById('eventOut').innerHTML='<br>Event name: '+JSON.stringify(response.name)+'<br>';
@@ -293,7 +293,7 @@ document.getElementById('eventOut').innerHTML+='Event time: '+JSON.stringify(res
     }
 );
 FB.api(
-    "/1738617373034421",
+    "/573084389517665",
     function (response) {
       if (response && !response.error) {
 document.getElementById('eventOut').innerHTML+='<br><br>Event name: '+JSON.stringify(response.name)+'<br>';
