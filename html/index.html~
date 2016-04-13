@@ -1,13 +1,6 @@
 <html>
   <head>
   <title>Effcal</title>
-  <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -56,15 +49,17 @@
        */
       function handleAuthClick(event) {
 	console.log("Google authentication");
-	    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 	  ga('send', {
 	  hitType: 'event',
-	  eventCategory: 'Google Login',
+	  eventCategory: 'GoogleLogin',
 	  eventAction: 'Click'
 	});
+
         gapi.auth.authorize(
           {client_id: CLIENT_ID, scope: SCOPES, immediate: false},
           handleAuthResult);
@@ -84,15 +79,17 @@
        * appropriate message is printed.
        */
       function listUpcomingEvents() {
-	    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 	  ga('send', {
 	  hitType: 'event',
 	  eventCategory: 'ShowGoogleEvents',
 	  eventAction: 'Click'
 	});
+
 		console.log("Show Google events");
         var request = gapi.client.calendar.events.list({
           'calendarId': 'primary',
@@ -140,11 +137,11 @@
         pre.appendChild(textContent);
       }
     </script>
-	<script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
-	<script src="//js.live.net/v5.0/wl.js"></script>
-
+    <script src="https://apis.google.com/js/client.js?onload=checkAuth">
+    </script>
+    <script src="//js.live.net/v5.0/wl.js"></script>
 <script>
-var OUTLOOK_APP_CLIENT_ID = "a70d0bd4-67a2-42fb-b6b4-0bc587d30934";
+var OUTLOOK_APP_CLIENT_ID = "af062560-288f-42e3-b1e1-6b53fab62db8";
 var OUTLOOK_REDIRECT_URL = "https://effcal.herokuapp.com/";
 WL.Event.subscribe("auth.login", onLogin);
 WL.Event.subscribe("auth.logout", function(){document.getElementById("infoLabel").innerText = "";});
@@ -165,15 +162,17 @@ if (session) {
                 element: "signin"
             });
             function onLogin () {
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
   ga('send', {
   hitType: 'event',
-  eventCategory: 'Outlook Login',
+  eventCategory: 'OutlookLogin',
   eventAction: 'Click'
 });
+
             	var session = WL.getSession();
                 if (!session.error) {
                    WL.api({
@@ -181,15 +180,17 @@ if (session) {
                       method: "GET"
                    }).then(
                       function (response) {
-			    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 			  ga('send', {
 			  hitType: 'event',
 			  eventCategory: 'SeeOutlookEvents',
 			  eventAction: 'Click'
 			});
+
                                 document.getElementById("infoLabel").innerText =
                                     "Welcome, " +
                                     response.first_name + " " + 
@@ -214,101 +215,120 @@ if (session) {
        </script>
     
 <style>
-   /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
-    .row.content {height: 1500px}
-    
-    /* Set gray background color and 100% height */
-    .sidenav {
-      background-color: #f1f1f1;
-      height: 100%;
-    }
-    
-    /* Set black background color, white text and some padding */
-    footer {
-      background-color: #555;
-      color: white;
-      padding: 15px;
-    }
-    
-    /* On small screens, set height to 'auto' for sidenav and grid */
-    @media screen and (max-width: 767px) {
-      .sidenav {
-        height: auto;
-        padding: 15px;
-      }
-      .row.content {height: auto;} 
-    }
+#page {
+    margin-left: 200px;
+}
+#maincontent {
+    float: right;
+    width: 100%;
+    background-color: #F0F0F0;
+}
+#menuleftcontent{
+    float: left;
+    width: 200px;
+    margin-left: -200px;
+    background-color: #CCCCCC;
+    height:100%;
+}
+#clearingdiv {
+    clear: both;
+}
+.CSSTableGenerator {
+	margin:0px;padding:0px;
+	box-shadow: 10px 10px 5px #888888;
+	border:1px solid #000000;
+	
+	-moz-border-radius-bottomleft:0px;
+	-webkit-border-bottom-left-radius:0px;
+	border-bottom-left-radius:0px;
+	
+	-moz-border-radius-bottomright:0px;
+	-webkit-border-bottom-right-radius:0px;
+	border-bottom-right-radius:0px;
+	
+	-moz-border-radius-topright:0px;
+	-webkit-border-top-right-radius:0px;
+	border-top-right-radius:0px;
+	
+	-moz-border-radius-topleft:0px;
+	-webkit-border-top-left-radius:0px;
+	border-top-left-radius:0px;
+}.CSSTableGenerator table{
+    border-collapse: collapse;
+        border-spacing: 0;
+	width:100%;
+	height:100%;
+	margin:0px;padding:0px;
+}.CSSTableGenerator tr:last-child td:last-child {
+	-moz-border-radius-bottomright:0px;
+	-webkit-border-bottom-right-radius:0px;
+	border-bottom-right-radius:0px;
+}
+.CSSTableGenerator table tr:first-child td:first-child {
+	-moz-border-radius-topleft:0px;
+	-webkit-border-top-left-radius:0px;
+	border-top-left-radius:0px;
+}
+.CSSTableGenerator table tr:first-child td:last-child {
+	-moz-border-radius-topright:0px;
+	-webkit-border-top-right-radius:0px;
+	border-top-right-radius:0px;
+}.CSSTableGenerator tr:last-child td:first-child{
+	-moz-border-radius-bottomleft:0px;
+	-webkit-border-bottom-left-radius:0px;
+	border-bottom-left-radius:0px;
+}.CSSTableGenerator tr:hover td{
+	
+}
+.CSSTableGenerator tr:nth-child(odd){ background-color:#d3c2c2; }
+.CSSTableGenerator tr:nth-child(even)    { background-color:#ffffff; }.CSSTableGenerator td{
+	vertical-align:middle;
+	
+	
+	border:1px solid #000000;
+	border-width:0px 1px 1px 0px;
+	text-align:left;
+	padding:7px;
+	font-size:10px;
+	font-family:Arial;
+	font-weight:bold;
+	color:#000000;
+}.CSSTableGenerator tr:last-child td{
+	border-width:0px 1px 0px 0px;
+}.CSSTableGenerator tr td:last-child{
+	border-width:0px 0px 1px 0px;
+}.CSSTableGenerator tr:last-child td:last-child{
+	border-width:0px 0px 0px 0px;
+}
+.CSSTableGenerator tr:first-child td{
+		background:-o-linear-gradient(bottom, #1c0101 5%, #bf5f00 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #1c0101), color-stop(1, #bf5f00) );
+	background:-moz-linear-gradient( center top, #1c0101 5%, #bf5f00 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#1c0101", endColorstr="#bf5f00");	background: -o-linear-gradient(top,#1c0101,bf5f00);
+	background-color:#1c0101;
+	border:0px solid #000000;
+	text-align:center;
+	border-width:0px 0px 1px 1px;
+	font-size:14px;
+	font-family:Arial;
+	font-weight:bold;
+	color:#ffffff;
+}
+.CSSTableGenerator tr:first-child:hover td{
+	background:-o-linear-gradient(bottom, #1c0101 5%, #bf5f00 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #1c0101), color-stop(1, #bf5f00) );
+	background:-moz-linear-gradient( center top, #1c0101 5%, #bf5f00 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#1c0101", endColorstr="#bf5f00");	background: -o-linear-gradient(top,#1c0101,bf5f00);
+	background-color:#1c0101;
+}
+.CSSTableGenerator tr:first-child td:first-child{
+	border-width:0px 0px 1px 0px;
+}
+.CSSTableGenerator tr:first-child td:last-child{
+	border-width:0px 0px 1px 1px;
+}
 </style>
 
   </head>
   <body>
-
-<div class="container-fluid">
-	<h1>Effcal</h1><br>
-	<div class="row content">
-		<div class="col-sm-3 sidenav"><br> <br>
-			<ul class="nav nav-pills nav-stacked">
-			<li class="active"><a href="#firstcontent">Google connect</a></li><br>
-			<li class="active"><a href="#secondcontent">Facebook connect</a></li><br>
-		    <li class="active"><a href="#thirdcontent">Outlook connect</a></li><br>
-			</ul><br>
-		</div>
-		<div class="col-sm-9">
-		<span><h2>Login to see your upcoming events</h2></span>
-			<div id="firstcontent"><hr>
-				<h2>Google events</h2>
-				<div id="authorize-div" style="display: none"><br />
-					<button style="display: inline-block" id="authorize-button" onclick="handleAuthClick(event)">
-					<img src="images/Google.png" height="22" width="22" style="float: left; margin-right: 0.5em" />Sign in to Google
-					</button>
-				</div>
-			</div><hr>
-			<div id="secondcontent">
-				<h2>Facebook events</h2>
-				<fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
-				<div id="status"></div><br />
-				<input type="button" value="See FB events" name="check" onClick="getList();" />
-				<div id="eventOut">Select Event Info to fetch details</div>
-				</div><hr>
-				
-			<div id="thirdcontent">
-				<h2>Outlook events</h2>
-				<div id="signin"></div><br /> 
-				<label id="infoLabel"></label>
-				</div>
-			</div>
-			<script type="text/javascript" src="outlook.js"></script><hr>
-
-
-		</div>
-	
-
-    <div id="clearingdiv"></div>
-</div>
-
-    <div id="authorize-div" style="display: none">
-      <span>Authorize access to Google Calendar API</span>
-      <!--Button for the user to click to initiate auth sequence -->
-      <button id="authorize-button" onclick="handleAuthClick(event)">
-        Authorize
-      </button>
-    </div>
-    <pre id="output"></pre>
-    <div id="out"></div>
-
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
 <div id="page">
     <h1>Effcal</h1>
     <div id="maincontent">
@@ -407,15 +427,17 @@ if (session) {
   }
   // Login status check
   function checkLoginState() {
-		 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 	  ga('send', {
 	  hitType: 'event',
-	  eventCategory: 'Facebook login',
+	  eventCategory: 'FacebookLogin',
 	  eventAction: 'Click'
 	});
+
 		console.log("Facebook login");
     FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
@@ -443,15 +465,17 @@ if (session) {
 <script>
 function getList(){
 	console.log("See Facebook appointments");
-	    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 	  ga('send', {
 	  hitType: 'event',
 	  eventCategory: 'SeeFacebookEvents',
 	  eventAction: 'Click'
 	});
+
 FB.api(
     "/780001448800563",
     function (response) {
@@ -486,10 +510,6 @@ document.getElementById('eventOut').innerHTML=JSON.stringify(response);
 }
 </script>
 
-
-	<footer class="container-fluid">
-		<p>Footer Text</p>
-	</footer>
 
   </body>
 </html>
